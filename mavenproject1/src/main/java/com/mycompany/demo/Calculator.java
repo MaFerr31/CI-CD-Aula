@@ -8,15 +8,21 @@ public class Calculator {
       static double  num1 =  Double.parseDouble(JOptionPane.showInputDialog("Insira o primeiro numero"));
       static double  num2 =  Double.parseDouble(JOptionPane.showInputDialog("Insira o segundo numero"));
     public static void main(String[] args) {
-      if (op == 1){
-        soma(num1, num2);
-      } else if (op == 2) {
-        subtracao(num1, num2);
-      } else if (op == 3) {
-        multiplicacao(num1, num2);
-      } else{
-        divisao(num1, num2);
-      }
+      
+          switch (op) {
+              case 1:
+                  soma(num1, num2);
+                  break;
+              case 2:
+                  subtracao(num1, num2);
+                  break;
+              case 3:
+                  multiplicacao(num1, num2);
+                  break;
+              default:
+                  divisao(num1, num2);
+                  break;
+          }
     }
     
     public static double soma(double num1, double num2) {
