@@ -30,7 +30,7 @@ jobs:
 
       # Rodar o Maven para construir o projeto
       - name: Compilar projeto com Maven
-        working-directory: ./mavenproject1   # Caminho correto para o seu pom.xml
+        working-directory: ./demo   # Caminho correto para o seu pom.xml
         run: mvn clean install
 
       # Adicionar um teste básico para rodar a compilação

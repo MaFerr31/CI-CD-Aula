@@ -11,70 +11,45 @@ public class Calculator {
       
           switch (op) {
               case 1:
-                  soma();
+                  soma(num1, num2);
                   break;
               case 2:
-                  subtracao();
+                  subtracao(num1, num2);
                   break;
               case 3:
-                  multiplicacao();
+                  multiplicacao(num1, num2);
                   break;
               default:
-                  divisao();
+                  divisao(num1, num2);
                   break;
           }
     }
     
-    public static double soma() {
+    public static double soma(double num1, double num2) {
        double response = num1 + num2;
        System.out.println("A soma dos dois números é " + response);
        return response; 
     }
     
-    public static double subtracao(){
+    public static double subtracao(double num1, double num2){
         double response = num1 - num2;
         System.out.println("A subtração dos dois números é " + response);
         return response;
     }
     
-    public static double multiplicacao(){
+    public static double multiplicacao(double num1, double num2){
         double response = num1 * num2;
         System.out.println("A multiplicação dos dois números é " + response);
         return response;
     }
     
-    public static double divisao(){
+    public static double divisao(double num1, double num2){
         double response = num1 / num2;
         System.out.println("A divisão dos dois números é " + response);
         return response;
     }
-
-    public static int getOp() {
-        return op;
-    }
-
-    public static void setOp(int op) {
-        Calculator.op = op;
-    }
-
-    public static double getNum1() {
-        return num1;
-    }
-
-    public static void setNum1(double num1) {
-        Calculator.num1 = num1;
-    }
-
-    public static double getNum2() {
-        return num2;
-    }
-
-    public static void setNum2(double num2) {
-        Calculator.num2 = num2;
-    }
     
-    public void solicitarValores(){
-        this.num1 = Integer.parseInt(JOptionPane.showInputDialog("Insira o primeiro número: "));
-        this.num2 = Integer.parseInt(JOptionPane.showInputDialog("Insira o segundo número: "));
-    }
+    
+    
+    
 }
