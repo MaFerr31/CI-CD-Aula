@@ -4,25 +4,36 @@ on:
   push:
     branches:
       - main
-  pull_request:	
+  pull_request:
     branches:
       - main
-  jobs:	
-    build:
-         runs-on: ubuntu-latest
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-     - name: Checkout  do repositorio
-       uses: actions/checkout@v3
+      # Checkout do repositório
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
 
-     - name: Listar arquivos para verificar diretorio
-       run: ls -R
+      # Listar arquivos e diretórios (debug)
+      - name: Listar arquivos para verificar diretório
+        run: ls -R
 
-     - name: Configurar JDK 18
-       uses: actions/setup-java@v3
-       
-       with:
-        distribution: 'temurin'
-        java-version: '18'
-     - name: "Compilar projeto com Maven"
-       working-directory: ./demo # Caminho correto para o seu pom.xml
-       run: mvn compile
+      # Configura Java 11
+      - name: Configurar JDK 18
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '18'
+
+      # Rodar o Maven para construir o projeto
+      - name: Compilar projeto com Maven
+        working-directory: ./mavenproject1   # Caminho correto para o seu pom.xml
+        run: mvn clean install
+
+      # Adicionar um teste básico para rodar a compilação
+      - name: Verificar o build
+        working-directory: ./demo  # Garante que o Maven rode no diretório correto
+        run: mvn compile
